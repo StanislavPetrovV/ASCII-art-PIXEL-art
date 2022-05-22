@@ -34,7 +34,7 @@ class ArtConverter:
         self.CHAR_STEP = int(font_size * 0.6)
         self.PALETTE, self.COLOR_COEFF = self.create_palette()
 
-        self.rec_fps = 25
+        self.rec_fps = self.capture.get(cv2.CAP_PROP_FPS)
         self.record = False
         self.recorder = cv2.VideoWriter('output/ascii_col.mp4', cv2.VideoWriter_fourcc(*'mp4v'), self.rec_fps, self.RES)
 

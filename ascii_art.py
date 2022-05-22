@@ -31,7 +31,7 @@ class ArtConverter:
         self.CHAR_STEP = int(font_size * 0.6)
         self.RENDERED_ASCII_CHARS = [self.font.render(char, False, 'white') for char in self.ASCII_CHARS]
 
-        self.rec_fps = 25
+        self.rec_fps = self.capture.get(cv2.CAP_PROP_FPS)
         self.record = False
         self.recorder = cv2.VideoWriter('output/ascii.mp4', cv2.VideoWriter_fourcc(*'mp4v'), self.rec_fps, self.RES)
 

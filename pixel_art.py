@@ -29,7 +29,7 @@ class ArtConverter:
         self.clock = pg.time.Clock()
         self.PALETTE, self.COLOR_COEFF = self.create_palette()
 
-        self.rec_fps = 25
+        self.rec_fps = self.capture.get(cv2.CAP_PROP_FPS)
         self.record = False
         self.recorder = cv2.VideoWriter('output/pixel_art.mp4', cv2.VideoWriter_fourcc(*'mp4v'), self.rec_fps, self.RES)
 
